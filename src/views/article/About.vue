@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Tiptap from '../components/Tiptap.vue'
+import Tiptap from '@/components/Tiptap.vue'
 
 export default {
   components: {
@@ -15,4 +15,6 @@ export default {
 }
 </script>
 
-Tiptap
+<style>
+
+</style>

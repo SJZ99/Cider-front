@@ -111,5 +111,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "@/assets/scss/tiptap.scss"
+@import "@/scss/tiptap.scss"
 </style>

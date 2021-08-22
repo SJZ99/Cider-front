@@ -12,10 +12,8 @@
                     CIDER
                 </h1>
             </v-toolbar-title>
-            <v-spacer/>
-
+            <v-spacer />
             <v-btn light color="white" @click="login()">Login</v-btn>
-        
         </v-toolbar>
         <v-navigation-drawer
             v-model="drawer"
@@ -99,16 +97,25 @@ export default {
             });
         },
         login() {
-            this.axios.post('https://localhost:810/cider/jwt/login', {
-                username: 'admin',        
-                password: '04231111' 
-            })
+            var bodyFormData = new FormData();
+            bodyFormData.append("username", "admin");
+            bodyFormData.append("password", "04231111");
+            var store = this.$store
+            this.axios.post("https://localhost:810/cider/jwt/login", bodyFormData)
             .then(function (response) {
-                console.log(response);
+                // console.log(response);
+                const token = response.headers['authorization'].replace("BEARER ", "");
+                // localStorage.setItem('token', token);
+                var options = {token: token, isLogin: true}
+                // console.log(options)
+                store.commit("SET_AUTH", options)
+                
             })
             .catch(function (error) {
                 console.log(error);
             })
+            // console.log(this.$store.state.token)
+            // console.log(this.$store.state.isLogin)
         },
     },
 }

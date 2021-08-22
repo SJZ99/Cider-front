@@ -6,4 +6,9 @@ module.exports = {
   devServer: {
     https: true
   },
+  pluginOptions: {
+    dll: {
+      entry: ['vue', 'vuetify', 'vuex', 'vue-axios', 'axios'],
+    },
+  },
 }

@@ -146,12 +146,12 @@ export default {
   data: ()=>({
     record: {
       title: 'Record',
-      content: '紀錄學習的歷程、生活的回憶，建立能讓自己信仰的目標。',
+      content: '紀錄學習過程和一些廢文，這個小窗窗看起來還不錯吧:)',
       dialog: false,
     },
     practice: {
       title: 'Practice',
-      content: '練習學到的技術，使自己在學習新知識的時候能以應用的角度思考，增進學習效率。',
+      content: '練習學到的技術，讓各種帥氣技術能夠被展現:)',
       dialog: false,
     }
   })
@@ -159,5 +159,5 @@ export default {
 </script>
 
 <style lang='scss'>
-@import '@/assets/scss/home.scss';
+@import '@/scss/home.scss';
 </style>
