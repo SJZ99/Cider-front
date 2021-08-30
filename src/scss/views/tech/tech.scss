@@ -1,13 +1,10 @@
 .section1 {
-    height: 100vh;
+    height: 110vh;
     width: 100vw;
 
     margin-top: 0vh;
 
-    background-image: url('../../../assets/tech/tech.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: #198964;
 
     float: left;
 
@@ -24,12 +21,13 @@
         margin-left: 1em;
         filter: brightness(0) invert(1);
     }
+
 }
 
 /** extra small */
 @media only screen and (max-width: 480px) {
     .section2 {
-        background-color: #198964;
+        background-color: #031f5b;
         height: 200vh;
         width: 100vw;
         margin-top: 0px;
@@ -42,13 +40,19 @@
             margin-top: 6vh;
             float: left;
         }
+
+        #curve {
+            width: 30vw;
+            margin-top: 195vh;
+            margin-left: 70vw;
+        }
     }
 }
 
 /** small */
 @media only screen and (min-width: 480px) {
     .section2 {
-        background-color: #198964;
+        background-color: #031f5b;
         height: 150vh;
         width: 100vw;
         margin-top: 0px;
@@ -61,13 +65,19 @@
             margin-top: 10vh;
             float: left;
         }
+
+        #curve {
+            width: 30vw;
+            margin-top: 120vh;
+            margin-left: 70vw;
+        }
     }
 }
 
 /** middle */
 @media only screen and (min-width: 690px) {
     .section2 {
-        background-color: #198964;
+        background-color: #031f5b;
         height: 100vh;
         width: 100vw;
         margin-top: 0px;
@@ -80,13 +90,19 @@
             margin-top: 10vh;
             float: left;
         }
+
+        #curve {
+            width: 30vw;
+            margin-top: 85vh;
+            margin-left: 70vw;
+        }
     }
 }
 
 /** Big */
 @media only screen and (min-width: 950px) {
     .section2 {
-        background-color: #198964;
+        background-color: #031f5b;
         height: 100vh;
         width: 100vw;
         margin-top: 0px;
@@ -98,6 +114,85 @@
             margin-left: 11.5vw;
             margin-top: 10vh;
             float: left;
+        }
+
+        #curve {
+            width: 30vw;
+            margin-top: 85vh;
+            margin-left: 70vw;
+        }
+    }
+}
+
+.section3 {
+    width: 100vw;
+    height: 100vh;
+    background-color: #7d9cd6;
+    float: left;
+
+    h2 {
+        font-size: 3.5em;
+        text-align: center;
+        margin-top: 10vh;
+        color: white;
+        line-height: 1.3em;
+    }
+
+    h3 {
+        font-size: 3em;
+        text-align: center;
+        margin-top: 25vh;
+        color: white;
+        line-height: 1em;
+    }
+
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+        height: 120vh;
+        .btn {
+            margin-top: 25vh;
+            float: left;
+            margin-left: 25vw;
+        }
+    }
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 600px) {
+        height: 110vh;
+        .btn {
+            margin-top: 25vh;
+            float: left;
+            margin-left: 38vw;
+        }
+    }
+
+    /* Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+        height: 100vh;
+        .btn {
+            margin-top: 25vh;
+            float: left;
+            margin-left: 40vw;
+        }
+    }
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+        height: 100vh;
+        .btn {
+            margin-top: 25vh;
+            float: left;
+            margin-left: 41vw;
+        }
+    }
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+    @media only screen and (min-width: 1200px) {
+        height: 100vh;
+        .btn {
+            margin-top: 25vh;
+            float: left;
+            margin-left: 45vw;
         }
     }
 }

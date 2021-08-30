@@ -4,9 +4,7 @@
       <div class="title">
 
         <h2>
-          Every miracle
-          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          takes some times
+          Indulge in code
         </h2>
 
         <v-btn dark color="#198964" max-width="45vh" @click="click_start">
@@ -144,7 +142,37 @@
         </v-card>
       </v-dialog>
       
+      <div id="made-by">
 
+        <div id="title">
+          <h2 class="text-center">Made By</h2>
+        </div>
+
+        <div id="block">
+
+          <div class="card-vue">
+            <v-img src="@/assets/langIcon/vue.svg" id="icon"></v-img>
+            <h2 class="text-center">Vue</h2>
+          </div>
+
+          <div class="card-vuetify">
+            <v-img src="@/assets/langIcon/vuetify.svg" id="icon"></v-img>
+            <h2 class="text-center">Vuetify</h2>
+          </div>
+
+          <div class="card-spring">
+            <v-img src="@/assets/langIcon/spring.svg" id="icon"></v-img>
+            <h2 class="text-center">Spring</h2>
+          </div>
+
+          <div class="card-swagger">
+            <v-img src="@/assets/langIcon/swagger.svg" id="icon"></v-img>
+            <h2 class="text-center">Swagger</h2>
+          </div>
+
+        </div>
+          
+      </div>
     </div>
   </div>
 </template>
