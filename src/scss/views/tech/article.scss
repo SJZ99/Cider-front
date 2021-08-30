@@ -1,0 +1,245 @@
+$height: 120vh;
+.backgraound {
+    background-color: #f3f3f3;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    #main-side {
+        $main_width: 96vw;
+        height: auto;
+        width: $main_width;
+        float: left;
+        margin-left: 2vw;
+
+        #title {
+            max-width: 100%;
+            float: left;
+            h1 {
+                font-size: 4em;
+                max-width: 100%;
+                overflow-wrap: break-word;
+            }
+
+            h5 {
+                color: grey;
+            }
+
+            pre {
+                float: left;
+                height: 4em;
+                padding: 0px;
+            }
+
+            #chip_group {
+                float: left;
+                margin-top: 2px;
+            }
+        }
+
+        #content {
+            float: left;
+            margin-top: 5px;
+            width: $main_width;
+            height: auto;
+            p {
+                max-width: 100%;
+                overflow-wrap: break-word;
+                word-wrap: break-word;
+                hyphens: auto;
+                font-size: 1.5em;
+            }
+        }
+    }
+
+    #right_bar {
+        height: 50vh;
+        width: 100vw;
+        float: left;
+        margin-left: 1vw;
+        margin-top: 8vh;
+
+        #card {
+            width: 40vw;
+            margin-left: 30vw;
+            margin-top: 30vh;
+            #divider {
+                width: 85%;
+            }
+        }
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    #main-side {
+        $main_width: 75vw;
+        height: $height;
+        width: 79vw;
+        float: left;
+        margin-left: 1vw;
+
+        #title {
+            h1 {
+                font-size: 4em;
+            }
+
+            h5 {
+                color: grey;
+            }
+
+            pre {
+                float: left;
+            }
+
+            #chip_group {
+                margin-top: 9px;
+            }
+        }
+
+        #content {
+            float: left;
+            margin-top: 5px;
+            width: $main_width;
+            p {
+                max-width: 100%;
+                overflow-wrap: break-word;
+                word-wrap: break-word;
+                hyphens: auto;
+                font-size: 1.5em;
+            }
+        }
+    }
+
+    #right_bar {
+        height: $height;
+        width: 18vw;
+        float: left;
+        margin-left: 1vw;
+
+        #card {
+            margin-top: 25vh;
+            position: fixed;
+
+            #divider {
+                width: 85%;
+            }
+        }
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    #main-side {
+        $main_width: 75vw;
+        height: $height;
+        width: $main_width;
+        float: left;
+        margin-left: 3vw;
+
+        #title {
+            h1 {
+                font-size: 4em;
+            }
+
+            h5 {
+                color: grey;
+            }
+
+            pre {
+                float: left;
+            }
+
+            #chip_group {
+                margin-top: 9px;
+            }
+        }
+
+        #content {
+            float: left;
+            margin-top: 5px;
+            width: $main_width;
+            p {
+                max-width: 100%;
+                overflow-wrap: break-word;
+                word-wrap: break-word;
+                hyphens: auto;
+                font-size: 1.5em;
+            }
+        }
+    }
+
+    #right_bar {
+        height: $height;
+        width: 18vw;
+        float: left;
+        margin-left: 2vw;
+
+        #card {
+            margin-top: 25vh;
+            position: fixed;
+
+            #divider {
+                width: 85%;
+            }
+        }
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    #main-side {
+        $main_width: 75vw;
+        height: $height;
+        width: 75vw;
+        float: left;
+        margin-left: 3vw;
+
+        #title {
+            h1 {
+                font-size: 4em;
+            }
+
+            h5 {
+                color: grey;
+            }
+
+            pre {
+                float: left;
+            }
+
+            #chip_group {
+                margin-top: 9px;
+            }
+        }
+
+        #content {
+            float: left;
+            margin-top: 5px;
+            width: $main_width;
+            p {
+                max-width: 100%;
+                overflow-wrap: break-word;
+                word-wrap: break-word;
+                hyphens: auto;
+                font-size: 1.5em;
+            }
+        }
+    }
+
+    #right_bar {
+        height: $height;
+        width: 18vw;
+        float: left;
+        margin-left: 2vw;
+
+        #card {
+            margin-top: 25vh;
+            position: fixed;
+
+            #divider {
+                width: 85%;
+            }
+        }
+    }
+}
+

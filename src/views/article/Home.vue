@@ -9,7 +9,7 @@
           takes some times
         </h2>
 
-        <v-btn dark color="#198964" max-width="45vh"  >
+        <v-btn dark color="#198964" max-width="45vh" @click="click_start">
           START
           &nbsp;
           <v-img src="@/assets/home/forward.svg" max-width="2vw" class="forward"> </v-img> 
@@ -36,7 +36,14 @@
         width="500"
       >
         <template v-slot:activator="{ on, attrs }">
-          <v-card color="transparent" dark max-width="40vw" class="card" v-bind="attrs" v-on="on">
+          <v-card
+            color="transparent"
+            dark
+            max-width="60vw"
+            class="card"
+            v-bind="attrs"
+            v-on="on"
+          >
             <v-row>
               <v-spacer/>
               <v-col>
@@ -86,7 +93,14 @@
         width="500"
       >
         <template v-slot:activator="{ on, attrs }">
-          <v-card color="transparent" dark max-width="40vw" class="card" v-bind="attrs" v-on="on">
+          <v-card
+            color="transparent"
+            dark
+            max-width="60vw"
+            class="card"
+            v-bind="attrs"
+            v-on="on"
+          >
             <v-row>
               <v-spacer/>
               <v-col>
@@ -143,7 +157,7 @@ export default {
   components: {
 
   },
-  data: ()=>({
+  data: () => ({
     record: {
       title: 'Record',
       content: '紀錄學習過程和一些廢文，這個小窗窗看起來還不錯吧:)',
@@ -154,10 +168,14 @@ export default {
       content: '練習學到的技術，讓各種帥氣技術能夠被展現:)',
       dialog: false,
     }
-  })
+  }),
+  method: {
+    click_start () {
+    }
+  },
 }
 </script>
 
 <style lang='scss'>
-@import '@/scss/home.scss';
+@import '@/scss/views/home.scss';
 </style>

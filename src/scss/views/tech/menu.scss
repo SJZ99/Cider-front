@@ -1,0 +1,179 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    #main {
+        width: 98vw;
+        height: 150vh;
+        margin-left: 1vw;
+        float: left;
+
+        #title {
+            width: 100%;
+            float: left;
+
+            h1 {
+                text-align: center;
+                margin-top: 0.3em;
+                margin-left: 0em;
+                font-size: 4em;
+                max-width: 100%;
+                overflow-wrap: break-word;
+            }
+
+            #divider {
+                margin-left: 4.5vw;
+                max-width: 89vw;
+                margin-top: 0.8em;
+                border-width: 2px;
+                color: #B2B2B2;
+            }
+        }
+
+        #content {
+            width: 100%;
+            height: auto;
+            float: left;
+
+            #content-card {
+                width: 48vw;
+                margin-left: 26vw;
+                margin-top: 5vh;
+                
+                #card-title {
+                    filter: invert(33%) sepia(91%) saturate(1267%) hue-rotate(135deg) brightness(86%) contrast(80%);
+                }
+            }
+        }
+    }
+
+    #right-bar {
+        width: 98vw;
+        height: 180vh;
+        margin-left: 1vw;
+        float: left;
+        #bar-card {
+            width: 40vw;
+            margin-top: 20vh;
+            margin-left: 30vw;
+        }
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    #main {
+        width: 75vw;
+        height: 150vh;
+        margin-left: 1vw;
+        float: left;
+
+        #title {
+            width: 100%;
+            float: left;
+
+            h1 {
+                margin-top: 0.3em;
+                margin-left: 1em;
+                font-size: 4em;
+                max-width: 100%;
+                overflow-wrap: break-word;
+            }
+
+            #divider {
+                margin-left: 4.5vw;
+                max-width: 95vw;
+                margin-top: 0.8em;
+                border-width: 2px;
+                color: #B2B2B2;
+            }
+        }
+
+        #content {
+            width: 100%;
+            height: auto;
+            float: left;
+
+            #content-card {
+                width: 48vw;
+                margin-left: 10vw;
+                margin-top: 5vh;
+                
+                #card-title {
+                    filter: invert(33%) sepia(91%) saturate(1267%) hue-rotate(135deg) brightness(86%) contrast(80%);
+                }
+            }
+        }
+    }
+
+    #right-bar {
+        width: 21vw;
+        height: 180vh;
+        margin-left: 1vw;
+        float: left;
+        #bar-card {
+            float: left;
+            margin-top: 20vh;
+            position: fixed;
+            margin-left: 4vw;
+        }
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    #main {
+        width: 75vw;
+        height: 150vh;
+        margin-left: 1vw;
+        float: left;
+
+        #title {
+            width: 100%;
+            float: left;
+
+            h1 {
+                margin-top: 0.3em;
+                margin-left: 1em;
+                font-size: 4em;
+                max-width: 100%;
+                overflow-wrap: break-word;
+            }
+
+            #divider {
+                margin-left: 4.5vw;
+                max-width: 95vw;
+                margin-top: 0.8em;
+                border-width: 2px;
+                color: #B2B2B2;
+            }
+        }
+
+        #content {
+            width: 100%;
+            height: auto;
+            float: left;
+
+            #content-card {
+                width: 48vw;
+                margin-left: 10vw;
+                margin-top: 5vh;
+                
+                #card-title {
+                    filter: invert(33%) sepia(91%) saturate(1267%) hue-rotate(135deg) brightness(86%) contrast(80%);
+                }
+            }
+        }
+    }
+
+    #right-bar {
+        width: 21vw;
+        height: 180vh;
+        margin-left: 1vw;
+        float: left;
+        #bar-card {
+            float: left;
+            margin-top: 20vh;
+            position: fixed;
+            margin-left: 4vw;
+        }
+    }
+}

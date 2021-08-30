@@ -1,10 +1,10 @@
 <template>
     <div>
-        <v-toolbar dark color="#198964">
+        <v-toolbar dark color="#198964" class="toolbar">
             <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
             &nbsp;&nbsp;
             <router-link to="/">
-                <v-img src="@/assets/CIDER.png" max-width="4vw"></v-img>
+                <v-img src="@/assets/CIDER.png" max-width="3em"></v-img>
             </router-link>
             &nbsp;&nbsp;&nbsp;&nbsp;
             <v-toolbar-title>
@@ -34,11 +34,11 @@
 
             <v-list dense>
                 <v-list-item
-                v-for="item in items"
-                :key="item.title"
-                link
-                @click="changePath(item.link)"
-            >
+                    v-for="item in items"
+                    :key="item.title"
+                    link
+                    @click="changePath(item.link)"
+                >
                 <v-list-item-icon>
                     <v-icon>{{ item.icon }}</v-icon>
                 </v-list-item-icon>
@@ -97,25 +97,7 @@ export default {
             });
         },
         login() {
-            var bodyFormData = new FormData();
-            bodyFormData.append("username", "admin");
-            bodyFormData.append("password", "04231111");
-            var store = this.$store
-            this.axios.post("https://localhost:810/cider/jwt/login", bodyFormData)
-            .then(function (response) {
-                // console.log(response);
-                const token = response.headers['authorization'].replace("BEARER ", "");
-                // localStorage.setItem('token', token);
-                var options = {token: token, isLogin: true}
-                // console.log(options)
-                store.commit("SET_AUTH", options)
-                
-            })
-            .catch(function (error) {
-                console.log(error);
-            })
-            // console.log(this.$store.state.token)
-            // console.log(this.$store.state.isLogin)
+            this.changePath("/login")
         },
     },
 }
@@ -124,5 +106,8 @@ export default {
 <style>
 .tab {
     margin-left: 2vw;
+}
+.toolbar {
+    width: 100vw;
 }
 </style>

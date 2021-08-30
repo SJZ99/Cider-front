@@ -1,0 +1,103 @@
+.section1 {
+    height: 100vh;
+    width: 100vw;
+
+    margin-top: 0vh;
+
+    background-image: url('../../../assets/tech/tech.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    float: left;
+
+    h1 {
+        line-height: 90vh;
+        font-size: 6em;
+        color: white;
+        text-align: center;
+    }
+
+    .img {
+        width: 3em;
+        height: auto;
+        margin-left: 1em;
+        filter: brightness(0) invert(1);
+    }
+}
+
+/** extra small */
+@media only screen and (max-width: 480px) {
+    .section2 {
+        background-color: #198964;
+        height: 200vh;
+        width: 100vw;
+        margin-top: 0px;
+        float: left;
+
+        #card {
+            height: 15vh;
+            width: 58vw;
+            margin-left: 21vw;
+            margin-top: 6vh;
+            float: left;
+        }
+    }
+}
+
+/** small */
+@media only screen and (min-width: 480px) {
+    .section2 {
+        background-color: #198964;
+        height: 150vh;
+        width: 100vw;
+        margin-top: 0px;
+        float: left;
+
+        #card {
+            height: 15vh;
+            width: 34vw;
+            margin-left: 10.6vw;
+            margin-top: 10vh;
+            float: left;
+        }
+    }
+}
+
+/** middle */
+@media only screen and (min-width: 690px) {
+    .section2 {
+        background-color: #198964;
+        height: 100vh;
+        width: 100vw;
+        margin-top: 0px;
+        float: left;
+
+        #card {
+            height: 15vh;
+            width: 24vw;
+            margin-left: 7vw;
+            margin-top: 10vh;
+            float: left;
+        }
+    }
+}
+
+/** Big */
+@media only screen and (min-width: 950px) {
+    .section2 {
+        background-color: #198964;
+        height: 100vh;
+        width: 100vw;
+        margin-top: 0px;
+        float: left;
+
+        #card {
+            height: 15vh;
+            width: 18vw;
+            margin-left: 11.5vw;
+            margin-top: 10vh;
+            float: left;
+        }
+    }
+}

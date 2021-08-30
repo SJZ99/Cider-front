@@ -12,13 +12,15 @@ Vue.use(VueAxios, axios)
 axios.interceptors.request.use(function (config) {
   // bring token
   const token = store.state.token;
-  config.headers.Authorization = token;
+  config.headers.Authorization = "BEARER " + token;
   return config;
 }, function (error) {
   // Do something with request error
   return Promise.reject(error);
 });
 
+axios.defaults.baseURL = "https://localhost:810/cider/"
+axios.defaults.withCredentials = true;
 
 new Vue({
   vuetify,
@@ -27,3 +29,5 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount('#app')
+
+export default axios
