@@ -1,5 +1,8 @@
 # cider-front
 
+## 發布地點：
+https://sjz99.github.io/Cider/
+
 ## Project setup
 ```
 npm install
