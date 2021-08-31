@@ -151,23 +151,180 @@
         <div id="block">
 
           <div class="card-vue">
-            <v-img src="@/assets/langIcon/vue.svg" id="icon"></v-img>
-            <h2 class="text-center">Vue</h2>
+            <a href="https://vuejs.org/">
+              <v-img src="@/assets/langIcon/vue.svg" id="icon"></v-img>
+            </a>
+            <v-dialog
+              v-model="vue"
+              width="500"
+            >
+              <template v-slot:activator="{ on, attrs }">
+                <h2 
+                  class="text-center"
+                  v-bind="attrs"
+                  v-on="on"
+                >
+                  Vue
+                </h2>
+              </template>
+
+              <v-card>
+                <v-card-title class="text-h5 lighten-2">
+                  Vue
+                </v-card-title>
+
+                <v-card-text class="text-h6">
+                  A progressive Javascript framework, 
+                  inspired by MVVM model (model-view-viewmodel), 
+                  driven by data, use component to provide DOM scalability. 
+                  It's also recommend learn Javascript start from Vue.
+                </v-card-text>
+
+                <v-card-actions>
+                  <v-spacer></v-spacer>
+                  <v-btn
+                    color="primary"
+                    text
+                    @click="vue = false"
+                  >
+                    OK
+                  </v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-dialog>
+            
           </div>
 
           <div class="card-vuetify">
-            <v-img src="@/assets/langIcon/vuetify.svg" id="icon"></v-img>
-            <h2 class="text-center">Vuetify</h2>
+            <a href="https://vuetifyjs.com/en/">
+              <v-img src="@/assets/langIcon/vuetify.svg" id="icon"></v-img>
+            </a>
+            <v-dialog
+              v-model="vuetify"
+              width="500"
+            >
+              <template v-slot:activator="{ on, attrs }">
+                <h2 
+                  class="text-center"
+                  v-bind="attrs"
+                  v-on="on"
+                >
+                  Vuetify
+                </h2>
+              </template>
+
+              <v-card>
+                <v-card-title class="text-h5 lighten-2">
+                  Vuetify
+                </v-card-title>
+
+                <v-card-text class="text-h6">
+                  A vue UI component library, provide some layout systems use for RWD website, 
+                  follow the Meterial Design Specifications. It is the most popular UI library for Vue devloper, 
+                  and it has a very active development cycle to keep improve quality.
+                </v-card-text>
+
+                <v-card-actions>
+                  <v-spacer></v-spacer>
+                  <v-btn
+                    color="primary"
+                    text
+                    @click="vuetify = false"
+                  >
+                    OK
+                  </v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-dialog>
+            
           </div>
 
           <div class="card-spring">
-            <v-img src="@/assets/langIcon/spring.svg" id="icon"></v-img>
-            <h2 class="text-center">Spring</h2>
+            <a href="https://spring.io/">
+              <v-img src="@/assets/langIcon/spring.svg" id="icon"></v-img>
+            </a>
+
+            <v-dialog
+              v-model="spring"
+              width="500"
+            >
+              <template v-slot:activator="{ on, attrs }">
+                <h2 
+                  class="text-center"
+                  v-bind="attrs"
+                  v-on="on"
+                >
+                  Spring
+                </h2>
+              </template>
+
+              <v-card>
+                <v-card-title class="text-h5 lighten-2">
+                  Spring
+                </v-card-title>
+
+                <v-card-text class="text-h6">
+                  A progressive Java framework, spring boot integrate many useful tool. 
+                  Using IoC and DI provide flexible extension. 
+                  Spring Security can be integrated to a project, each of these are quickly and responsibly for security issues. 
+                  It is the most popular framework for Java.
+                </v-card-text>
+
+                <v-card-actions>
+                  <v-spacer></v-spacer>
+                  <v-btn
+                    color="primary"
+                    text
+                    @click="spring = false"
+                  >
+                    OK
+                  </v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-dialog>
+
           </div>
 
           <div class="card-swagger">
-            <v-img src="@/assets/langIcon/swagger.svg" id="icon"></v-img>
-            <h2 class="text-center">Swagger</h2>
+            <a href="https://swagger.io/">
+              <v-img src="@/assets/langIcon/swagger.svg" id="icon"></v-img>
+            </a>
+            <v-dialog
+              v-model="swagger"
+              width="500"
+            >
+              <template v-slot:activator="{ on, attrs }">
+                <h2 
+                  class="text-center"
+                  v-bind="attrs"
+                  v-on="on"
+                >
+                  Swagger
+                </h2>
+              </template>
+
+              <v-card>
+                <v-card-title class="text-h5 lighten-2">
+                  Swagger
+                </v-card-title>
+
+                <v-card-text class="text-h6">
+                  A open source API devlopment tool, easily to generate API document. 
+                  Making frontend and backend cooperate more efficiently
+                </v-card-text>
+
+                <v-card-actions>
+                  <v-spacer></v-spacer>
+                  <v-btn
+                    color="primary"
+                    text
+                    @click="swagger = false"
+                  >
+                    OK
+                  </v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-dialog>
           </div>
 
         </div>
@@ -186,6 +343,10 @@ export default {
 
   },
   data: () => ({
+    vue: false,
+    vuetify: false,
+    spring: false,
+    swagger: false,
     record: {
       title: 'Record',
       content: '紀錄學習過程和一些廢文，這個小窗窗看起來還不錯吧:)',
