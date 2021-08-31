@@ -2,6 +2,9 @@ $height: 120vh;
 .backgraound {
     background-color: #f3f3f3;
 }
+#pre {
+    background: transparent
+}
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     #main-side {
@@ -12,8 +15,9 @@ $height: 120vh;
         margin-left: 2vw;
 
         #title {
-            max-width: 100%;
+            max-width: 90%;
             float: left;
+            margin-left: 5%;
             h1 {
                 font-size: 4em;
                 max-width: 100%;

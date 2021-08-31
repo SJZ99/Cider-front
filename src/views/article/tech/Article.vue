@@ -6,7 +6,7 @@
 
       <div id="title">
         <h1 class="text-left">{{title}}</h1>
-        <pre>
+        <pre id="pre">
           <h5>By: {{author}}    last modify: {{last_modify}}    </h5>
         </pre>
 
