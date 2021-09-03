@@ -6,23 +6,32 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    token: "",
+    token: '',
     isLogin: false,
+    name: '',
+    role: '',
+
+    barImage: '',
+    barColor: 'rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)',
   },
+
   mutations: {
     SET_AUTH (state, options) {
       state.token = options.token;
       state.isLogin = options.isLogin;
-    }
+    },
+    SET_BAR_IMAGE (state, payload) {
+      state.barImage = payload
+    },
+    SET_DRAWER (state, payload) {
+      state.drawer = payload
+    },
   },
+
   actions: {
-    setAuth(context, options) {
-      context.commit('SET_AUTH', {
-        token: options.token,
-        isLogin: options.isLogin
-      })
-    }
+
   },
+
   plugins: [
     new VuexPersistence({
         reducer: state => ({

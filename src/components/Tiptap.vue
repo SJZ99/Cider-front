@@ -2,7 +2,7 @@
     <div>
         <!-- bubble menu -->
         <bubble-menu :editor="editor" v-if="editor" class="bubble-menu">
-            <button @click="editor.chain().focus().toggleHeading({ level: 1 }).run()" :class="{ 'is-active': editor.isActive('heading', { level: 1 }) }">
+            <button @click="title" :class="{ 'is-active': editor.isActive('heading', { level: 1 }) }">
                 <tip-icon icon="mdi-format-text" tip="title"/>
             </button>
             <button @click="editor.chain().focus().toggleBold().run()" :class="{ 'is-active': editor.isActive('bold') }">
@@ -68,12 +68,24 @@ import {
 } from '@tiptap/vue-2'
 
 import Typography from '@tiptap/extension-typography'
+import { ColorHighlighter } from '@/ts/ColorHighlighter.ts'
+import { SmilieReplacer } from '@/ts/SmilieReplacer.ts'
 
 import Blockquote from '@tiptap/extension-blockquote'
 
 import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight'
 import lowlight from 'lowlight'
-import TipIcon from './TipIcon.vue'
+import TipIcon from '@/components/TipIcon.vue'
+
+import BulletList from '@tiptap/extension-bullet-list'
+
+const my_bulletList = BulletList.extend({
+  addKeyboardShortcuts() {
+    return {
+      'Tab': () => this.editor.commands.insertContent("    "),
+    }
+  },
+})
 
 export default {
   components: {
@@ -87,12 +99,13 @@ export default {
     return {
       editor: null,
       bubble_more: false,
+      title_statue: false,
     }
   },
 
   mounted() {
     this.editor = new Editor({
-      content: '<p>I’m running tiptap with Vue.js. 🎉</p>',
+      content: '<h1>Title here</h1>',
       extensions: [
         StarterKit,
         CodeBlockLowlight.configure({
@@ -100,6 +113,9 @@ export default {
         }),
         Typography,
         Blockquote,
+        my_bulletList,
+        ColorHighlighter,
+        SmilieReplacer,
       ],
     })
   },
@@ -107,6 +123,23 @@ export default {
   beforeDestroy() {
     this.editor.destroy()
   },
+
+  methods: {
+    title () {
+      if(this.title_statue) { //h2
+
+        this.editor.chain().focus().toggleHeading({ level: 2 }).run();
+      }else { //h1
+
+        this.editor.chain().focus().toggleHeading({ level: 1 }).run();
+      }
+
+      this.title_statue = !this.title_statue;
+    },
+    output () {
+      
+    }
+  }
 }
 </script>
 

@@ -1,31 +1,28 @@
 <template>
     <div>
-        <v-toolbar dark color="#198964" class="toolbar">
+        <v-toolbar dark color="#031f5b" class="toolbar">
             <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-            &nbsp;&nbsp;
-            <router-link to="/">
-                <v-img src="@/assets/CIDER.png" max-width="3em"></v-img>
-            </router-link>
-            &nbsp;&nbsp;&nbsp;&nbsp;
+           
             <v-toolbar-title>
-                <h1>
-                    CIDER
-                </h1>
+                <h1 v-text="$router.currentRoute.name"></h1>
             </v-toolbar-title>
+
             <v-spacer />
-            <v-btn light color="white" @click="login()">Login</v-btn>
+
         </v-toolbar>
+
         <v-navigation-drawer
             v-model="drawer"
             absolute
             temporary
             dark
-            color="#198964"
+            color="#031f5b"
+            :src="barImage"
         >
             <v-list-item>
                 <v-list-item-content>
                     <h2>
-                        <v-list-item-title>Navigator</v-list-item-title>
+                        <v-list-item-title v-text="name"/>
                     </h2>
                 </v-list-item-content>
             </v-list-item>
@@ -55,39 +52,36 @@
 </template>
 
 <script>
+  import { mapState } from 'vuex'
+import store from '../../../store'
 export default {
-    data () {
-      return {
+    data: () => ({
+        barImg: store.state.barImage,
         drawer: false,
         items: [
             { 
-              title: 'Home', 
+              title: 'Dashboard', 
               icon: 'mdi-view-dashboard', 
-              link: '/' 
+              link: '/dashboard' 
             },
             { 
-                title: 'About', 
-                icon: 'mdi-barley', 
-                link: '/about' 
+                title: 'Profile', 
+                icon: 'mdi-account-box', 
+                link: '/dashboard/profile' 
             },
             { 
-                title: 'Tech',   
-                icon: 'mdi-xml', 
-                link: '/tech' 
+                title: 'Write Article',   
+                icon: 'mdi-pencil', 
+                link: '/dashboard/write' 
             },
             { 
-                title: 'Live',  
-                icon: 'mdi-one-up', 
+                title: 'Articles',  
+                icon: 'mdi-note-text-outline', 
                 link: '/live' 
             },
-            { 
-                title: 'Chat',   
-                icon: 'mdi-forum', 
-                link: '/chat'
-            },
         ],
-      }
-    },
+      
+    }),
     methods: {
         changePath(goToPath) {
             this.$router.push(goToPath).catch((error) => {
@@ -96,10 +90,21 @@ export default {
                 }
             });
         },
-        login() {
-            this.changePath("/login")
-        },
     },
+    computed: {
+        ...mapState(['barColor', 'barImage']),
+        drawer: {
+            get () {
+                return this.$store.state.drawer
+            },
+            set (val) {
+                this.$store.commit('SET_DRAWER', val)
+            },
+        },
+        name () {
+            return this.$store.state.name
+        }
+    }
 }
 </script>
 

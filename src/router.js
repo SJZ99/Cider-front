@@ -67,6 +67,25 @@ const routes = [
     ]
   },
 
+  /** Dashboard */
+  {
+    path: '/dashboard',
+    component: () => import('@/views/dashboard/Index.vue'),
+
+    children: [
+      {
+        path: '',
+        name: 'Dashboard',
+        // component: () => import('@/views/dashboard/views/Dashboard.vue')
+      },
+      {
+        path: 'write',
+        name: 'Write Store',
+        component: () => import('@/views/dashboard/views/Write.vue')
+      }
+    ]
+  },
+
   /** Error */
   {
     path: '/404',
