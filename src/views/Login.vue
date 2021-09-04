@@ -1,6 +1,6 @@
 <template>
-    <div class="form">
-        <form>
+    <div id="background">
+        <form id="form">
             <v-text-field
                 v-model="name"
                 :error-messages="nameErrors"
@@ -45,6 +45,7 @@
                             dark
                             v-bind="attrs"
                             v-on="on"
+                            id="btn"
                         >
                             Check
                         </v-btn>
@@ -79,6 +80,7 @@
                     <v-btn
                         class="mr-4"
                         @click="submit"
+                        id="btn"
                     >
                         submit
                     </v-btn>
@@ -87,6 +89,7 @@
                 <v-col>
                     <v-btn
                         @click="clear"
+                        id="btn"
                     >
                     clear
                     </v-btn>
