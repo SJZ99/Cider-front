@@ -13,6 +13,8 @@ export default new Vuex.Store({
 
     barImage: '',
     barColor: 'rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)',
+
+    content: '',
   },
 
   mutations: {
@@ -21,11 +23,11 @@ export default new Vuex.Store({
       state.isLogin = options.isLogin;
     },
     SET_BAR_IMAGE (state, payload) {
-      state.barImage = payload
+      state.barImage = payload;
     },
-    SET_DRAWER (state, payload) {
-      state.drawer = payload
-    },
+    SET_ARTICLE (state, article) {
+      state.content = article;
+    }
   },
 
   actions: {
@@ -34,9 +36,10 @@ export default new Vuex.Store({
 
   plugins: [
     new VuexPersistence({
-        reducer: state => ({
-            token: state.token
-        })
+      reducer: state => ({
+        token: state.token,
+        content: state.content,
+      })
     }).plugin
   ] 
 })

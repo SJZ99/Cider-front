@@ -82,6 +82,48 @@
             </v-item>
 
           </v-item-group>
+
+          <v-divider class="my-4 secondary" />
+
+          <v-dialog
+            v-model="tips"
+            width="500"
+          >
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                v-bind="attrs"
+                v-on="on"
+              >Tips</v-btn>
+            </template>
+
+            <v-card>
+              <v-card-title class="text-h5 lighten-2">
+                Tips
+              </v-card-title>
+
+              <v-card-text class="text-h6">
+                Using 'T' to highlight title<br>
+                Using '{}' to highlight code<br>
+                Using 'shift+enter' to break code block<br>
+                Typing ':-)' to see smilie<br>
+                Typing '&lt;3' to see heart<br>
+                Typing ';-' to see cry<br>
+                **The first heading will be use to article title.
+              </v-card-text>
+
+              <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn
+                  color="primary"
+                  text
+                  @click="tips = false"
+                >
+                  OK
+                </v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-dialog>
+
         </v-card-text>
       </v-card>
     </v-menu>
@@ -99,6 +141,7 @@
     mixins: [Proxyable],
 
     data: () => ({
+      tips: false,
       color: '#E91E63',
       colors: [
         '#9C27b0',

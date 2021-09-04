@@ -80,7 +80,7 @@ const routes = [
       },
       {
         path: 'write',
-        name: 'Write Store',
+        name: 'Write Story',
         component: () => import('@/views/dashboard/views/Write.vue')
       }
     ]

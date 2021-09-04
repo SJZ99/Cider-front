@@ -1,56 +1,56 @@
 <template>
-    <div>
-        <!-- bubble menu -->
-        <bubble-menu :editor="editor" v-if="editor" class="bubble-menu">
-            <button @click="title" :class="{ 'is-active': editor.isActive('heading', { level: 1 }) }">
-                <tip-icon icon="mdi-format-text" tip="title"/>
-            </button>
-            <button @click="editor.chain().focus().toggleBold().run()" :class="{ 'is-active': editor.isActive('bold') }">
-                <tip-icon icon="mdi-format-bold" tip="bold(crtl+B)"/>
-            </button>
-            <button @click="editor.chain().focus().toggleItalic().run()" :class="{ 'is-active': editor.isActive('italic') }">
-                <tip-icon icon="mdi-format-italic" tip="italic(crtl+I)"/>
-            </button>
-            <button @click="editor.chain().focus().toggleCodeBlock().run()" :class="{ 'is-active': editor.isActive('codeBlock') }">
-                <tip-icon icon="mdi-code-braces" tip="code block"/>
-            </button>
-            <!-- more -->
-            <button @click="bubble_more = !bubble_more">
-                <tip-icon icon="mdi-dots-vertical" tip="more"/>
-            </button>
-            <button v-show="bubble_more" @click="editor.chain().focus().toggleBulletList().run()" :class="{ 'is-active': editor.isActive('bulletList')}">
-                <tip-icon icon="mdi-format-list-bulleted" tip="bullet list"/>
-            </button>
-            <button v-show="bubble_more" @click="editor.chain().focus().toggleOrderedList().run()" :class="{ 'is-active': editor.isActive('orderedList')}">
-                <tip-icon icon="mdi-format-list-numbered" tip="order list"/>
-            </button>
-        </bubble-menu>
+  <div>
+    <!-- bubble menu -->
+    <bubble-menu :editor="editor" v-if="editor" class="bubble-menu">
+      <button @click="title" :class="{ 'is-active': editor.isActive('heading', { level: 1 }) }">
+          <tip-icon icon="mdi-format-text" tip="title"/>
+      </button>
+      <button @click="editor.chain().focus().toggleBold().run()" :class="{ 'is-active': editor.isActive('bold') }">
+          <tip-icon icon="mdi-format-bold" tip="bold(crtl+B)"/>
+      </button>
+      <button @click="editor.chain().focus().toggleItalic().run()" :class="{ 'is-active': editor.isActive('italic') }">
+          <tip-icon icon="mdi-format-italic" tip="italic(crtl+I)"/>
+      </button>
+      <button @click="editor.chain().focus().toggleCodeBlock().run()" :class="{ 'is-active': editor.isActive('codeBlock') }">
+          <tip-icon icon="mdi-code-braces" tip="code block"/>
+      </button>
+      <!-- more -->
+      <button @click="bubble_more = !bubble_more">
+          <tip-icon icon="mdi-dots-vertical" tip="more"/>
+      </button>
+      <button v-show="bubble_more" @click="editor.chain().focus().toggleBulletList().run()" :class="{ 'is-active': editor.isActive('bulletList')}">
+          <tip-icon icon="mdi-format-list-bulleted" tip="bullet list"/>
+      </button>
+      <button v-show="bubble_more" @click="editor.chain().focus().toggleOrderedList().run()" :class="{ 'is-active': editor.isActive('orderedList')}">
+          <tip-icon icon="mdi-format-list-numbered" tip="order list"/>
+      </button>
+    </bubble-menu>
 
-        <!-- floating menu -->
-        <floating-menu
-            class="floating-menu"
-            :tippy-options="{ duration: 100 }"
-            :editor="editor"
-            v-if="editor"
-        >
-        <button @click="editor.chain().focus().toggleHeading({ level: 1 }).run()" :class="{ 'is-active': editor.isActive('heading', { level: 1 }) }">
-            <tip-icon icon="mdi-format-text" tip="title"/>
-        </button>
-        <button @click="editor.chain().focus().toggleCodeBlock().run()" :class="{ 'is-active': editor.isActive('codeBlock') }">
-            <tip-icon icon="mdi-code-braces" tip="code block"/>
-        </button>
-        <button @click="editor.chain().focus().toggleBlockquote().run()" :class="{ 'is-active': editor.isActive('blockquote') }">
-            <tip-icon icon="mdi-format-quote-close" tip="quote(crtl+shift+B)"/>
-        </button>
-        <button @click="editor.chain().focus().toggleBulletList().run()" :class="{ 'is-active': editor.isActive('bulletList') }">
-            <tip-icon icon="mdi-format-list-bulleted" tip="bullet list"/>
-        </button>
-        <button @click="editor.chain().focus().toggleOrderedList().run()" :class="{ 'is-active': editor.isActive('orderedList') }">
-            <tip-icon icon="mdi-format-list-numbered" tip="order list"/>
-        </button>
-        </floating-menu>
-        <editor-content :editor="editor"/>
-    </div>
+    <!-- floating menu -->
+    <floating-menu
+      class="floating-menu"
+      :tippy-options="{ duration: 100 }"
+      :editor="editor"
+      v-if="editor"
+    >
+      <button @click="editor.chain().focus().toggleHeading({ level: 1 }).run()" :class="{ 'is-active': editor.isActive('heading', { level: 1 }) }">
+          <tip-icon icon="mdi-format-text" tip="title"/>
+      </button>
+      <button @click="editor.chain().focus().toggleCodeBlock().run()" :class="{ 'is-active': editor.isActive('codeBlock') }">
+          <tip-icon icon="mdi-code-braces" tip="code block"/>
+      </button>
+      <button @click="editor.chain().focus().toggleBlockquote().run()" :class="{ 'is-active': editor.isActive('blockquote') }">
+          <tip-icon icon="mdi-format-quote-close" tip="quote(crtl+shift+B)"/>
+      </button>
+      <button @click="editor.chain().focus().toggleBulletList().run()" :class="{ 'is-active': editor.isActive('bulletList') }">
+          <tip-icon icon="mdi-format-list-bulleted" tip="bullet list"/>
+      </button>
+      <button @click="editor.chain().focus().toggleOrderedList().run()" :class="{ 'is-active': editor.isActive('orderedList') }">
+          <tip-icon icon="mdi-format-list-numbered" tip="order list"/>
+      </button>
+    </floating-menu>
+    <editor-content :editor="editor"/>
+  </div>
 </template>
 
 <script>
@@ -68,7 +68,6 @@ import {
 } from '@tiptap/vue-2'
 
 import Typography from '@tiptap/extension-typography'
-import { ColorHighlighter } from '@/ts/ColorHighlighter.ts'
 import { SmilieReplacer } from '@/ts/SmilieReplacer.ts'
 
 import Blockquote from '@tiptap/extension-blockquote'
@@ -95,17 +94,27 @@ export default {
     TipIcon,
   },
 
-  data() {
-    return {
-      editor: null,
-      bubble_more: false,
-      title_statue: false,
+  data: () => ({
+    editor: null,
+    bubble_more: false,
+    title_statue: false,
+    timer: '',
+    content: '<h1>Title here</h1>',
+  }),
+
+  props: {
+    editable: {
+      type: Boolean,
+      default: true,
     }
   },
 
-  mounted() {
+  mounted () {
+    if(this.$store.state.content) {
+      this.content = this.$store.state.content
+    }
     this.editor = new Editor({
-      content: '<h1>Title here</h1>',
+      content: this.content,
       extensions: [
         StarterKit,
         CodeBlockLowlight.configure({
@@ -114,14 +123,19 @@ export default {
         Typography,
         Blockquote,
         my_bulletList,
-        ColorHighlighter,
         SmilieReplacer,
       ],
     })
+
+    if(this.timer) {
+      clearInterval(this.timer)
+    } 
+    this.timer = setInterval(this.save, 5000);
   },
 
   beforeDestroy() {
     this.editor.destroy()
+    clearInterval(this.timer)
   },
 
   methods: {
@@ -136,8 +150,10 @@ export default {
 
       this.title_statue = !this.title_statue;
     },
-    output () {
-      
+    save () {
+      let html = this.editor.getHTML();
+      let content = html;
+      this.$store.commit('SET_ARTICLE', content);
     }
   }
 }

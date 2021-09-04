@@ -11,7 +11,6 @@ import Setting from './components/Setting.vue'
 import Toolbar from './components/Toolbar.vue'
 export default {
   components: { Toolbar, Setting },
-
 }
 </script>
 

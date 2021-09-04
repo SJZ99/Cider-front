@@ -1,5 +1,5 @@
 <template>
-	<div id="editor">
+	<div>
     <tiptap/>
   </div>
 </template>

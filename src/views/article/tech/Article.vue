@@ -24,10 +24,9 @@
           </v-chip>
         </v-chip-group>
       </div>
+
       <div id="content">
-        <p>
-          {{content}}
-        </p>
+        <span v-html="content"></span>
       </div>
       
     </div>
@@ -49,6 +48,7 @@
 <script>
 import axios from '../../../main'
 import router from '../../../router'
+
 
 export default {
   data: () => ({
@@ -77,6 +77,11 @@ export default {
       },
     ],
   }),
+
+  components: {
+
+  },
+
   methods: {
     setData (type, title, content, lastModify) {
       this.type = type
@@ -85,6 +90,7 @@ export default {
       this.last_modify = lastModify
     }
   },
+
 	beforeRouteEnter (to, from, next) {
 		axios
 			.get('tech/' + to.params.lang + '/' + to.params.id)

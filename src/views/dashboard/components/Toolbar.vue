@@ -9,6 +9,14 @@
 
             <v-spacer />
 
+            <v-btn
+                light
+                v-if="$router.currentRoute.name == 'Write Story'"
+                @click="save"
+            >
+                SAVE
+            </v-btn>
+
         </v-toolbar>
 
         <v-navigation-drawer
@@ -52,7 +60,7 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex'
+import { mapState } from 'vuex'
 import store from '../../../store'
 export default {
     data: () => ({
@@ -83,13 +91,27 @@ export default {
       
     }),
     methods: {
-        changePath(goToPath) {
+        changePath (goToPath) {
             this.$router.push(goToPath).catch((error) => {
                 if (error.name != "NavigationDuplicated") {
                     throw error;
                 }
             });
         },
+        save () {
+            let con = store.state.content;
+            if(con && con != '<h1>Title here</h1>') {
+                var bodyFormData = new FormData();
+                bodyFormData.append("content", store.state.content);
+                this.axios.post('writer/post', bodyFormData)
+                .then(() => {
+                    store.commit('SET_ARTICLE', '');
+                })
+                .catch(() => {
+
+                })
+            }
+        }
     },
     computed: {
         ...mapState(['barColor', 'barImage']),
