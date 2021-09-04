@@ -77,7 +77,7 @@ export default {
             },
             { 
                 title: 'Live',  
-                icon: 'mdi-one-up', 
+                icon: 'mdi-clover', 
                 link: '/live' 
             },
             { 
