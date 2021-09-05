@@ -1,9 +1,29 @@
-.form {
+#background {
+    /* The image used */
+    background-image: url('../assets/login/login_background.jpg');
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#form {
     margin: auto;
     margin-top: 13vh;
-    width: 40vw;
+    max-width: 95vw;
+    width: 500px;
     height: 65vh;
     padding: 5vw;
     box-shadow: 0.1em 0.1em 0.6em 0.6em grey;
     border-radius: 10px;
+    
+    background-color: white;
+}
+
+#btn {
+    width: auto;
+    max-width: 20vw;
 }
