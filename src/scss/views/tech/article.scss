@@ -7,6 +7,64 @@ $height: 120vh;
 #pre {
     background: transparent
 }
+
+@mixin content ($main-width) {
+
+    #content {
+        float: left;
+        margin-top: 5px;
+        width: $main_width;
+        height: auto;
+        p {
+            max-width: 100%;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: auto;
+            font-size: 1.5em;
+        }
+    }
+}
+
+@mixin title {
+
+    #title {
+        h1 {
+            font-size: 4em;
+        }
+
+        h5 {
+            color: grey;
+        }
+
+        pre {
+            float: left;
+        }
+
+        #chip_group {
+            margin-top: 9px;
+        }
+    }
+}
+
+@mixin right_bar ($margin){
+
+    #right_bar {
+        height: $height;
+        width: 18vw;
+        float: left;
+        margin-left: $margin;
+
+        #card {
+            margin-top: 25vh;
+            position: fixed;
+
+            #divider {
+                width: 85%;
+            }
+        }
+    }
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     #main-side {
@@ -42,19 +100,7 @@ $height: 120vh;
             }
         }
 
-        #content {
-            float: left;
-            margin-top: 5px;
-            width: $main_width;
-            height: auto;
-            p {
-                max-width: 100%;
-                overflow-wrap: break-word;
-                word-wrap: break-word;
-                hyphens: auto;
-                font-size: 1.5em;
-            }
-        }
+        @include content ($main-width);
     }
 
     #right_bar {
@@ -84,57 +130,17 @@ $height: 120vh;
         float: left;
         margin-left: 1vw;
 
-        #title {
-            h1 {
-                font-size: 4em;
-            }
+        @include title;
 
-            h5 {
-                color: grey;
-            }
-
-            pre {
-                float: left;
-            }
-
-            #chip_group {
-                margin-top: 9px;
-            }
-        }
-
-        #content {
-            float: left;
-            margin-top: 5px;
-            width: $main_width;
-            p {
-                max-width: 100%;
-                overflow-wrap: break-word;
-                word-wrap: break-word;
-                hyphens: auto;
-                font-size: 1.5em;
-            }
-        }
+        @include content ($main-width);
     }
 
-    #right_bar {
-        height: $height;
-        width: 18vw;
-        float: left;
-        margin-left: 1vw;
-
-        #card {
-            margin-top: 25vh;
-            position: fixed;
-
-            #divider {
-                width: 85%;
-            }
-        }
-    }
+    @include right_bar(1vw);
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+
     #main-side {
         $main_width: 75vw;
         height: $height;
@@ -142,57 +148,18 @@ $height: 120vh;
         float: left;
         margin-left: 3vw;
 
-        #title {
-            h1 {
-                font-size: 4em;
-            }
+        @include title;
 
-            h5 {
-                color: grey;
-            }
-
-            pre {
-                float: left;
-            }
-
-            #chip_group {
-                margin-top: 9px;
-            }
-        }
-
-        #content {
-            float: left;
-            margin-top: 5px;
-            width: $main_width;
-            p {
-                max-width: 100%;
-                overflow-wrap: break-word;
-                word-wrap: break-word;
-                hyphens: auto;
-                font-size: 1.5em;
-            }
-        }
+        @include content ($main-width);
     }
 
-    #right_bar {
-        height: $height;
-        width: 18vw;
-        float: left;
-        margin-left: 2vw;
+    @include right_bar(2vw);
 
-        #card {
-            margin-top: 25vh;
-            position: fixed;
-
-            #divider {
-                width: 85%;
-            }
-        }
-    }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+
     #main-side {
         $main_width: 75vw;
         height: $height;
@@ -200,53 +167,13 @@ $height: 120vh;
         float: left;
         margin-left: 3vw;
 
-        #title {
-            h1 {
-                font-size: 4em;
-            }
+        @include title;
 
-            h5 {
-                color: grey;
-            }
-
-            pre {
-                float: left;
-            }
-
-            #chip_group {
-                margin-top: 9px;
-            }
-        }
-
-        #content {
-            float: left;
-            margin-top: 5px;
-            width: $main_width;
-            p {
-                max-width: 100%;
-                overflow-wrap: break-word;
-                word-wrap: break-word;
-                hyphens: auto;
-                font-size: 1.5em;
-            }
-        }
+        @include content ($main-width);
     }
 
-    #right_bar {
-        height: $height;
-        width: 18vw;
-        float: left;
-        margin-left: 2vw;
+    @include right_bar(2vw);
 
-        #card {
-            margin-top: 25vh;
-            position: fixed;
-
-            #divider {
-                width: 85%;
-            }
-        }
-    }
 }
 
 

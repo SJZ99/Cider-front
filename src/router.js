@@ -82,7 +82,12 @@ const routes = [
         path: 'write',
         name: 'Write Story',
         component: () => import('@/views/dashboard/views/Write.vue')
-      }
+      },
+      {
+        path: 'profile',
+        name: 'Profile',
+        component: () => import('@/views/dashboard/views/Profile.vue')
+      },
     ]
   },
 
