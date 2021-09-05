@@ -88,6 +88,7 @@
           <v-dialog
             v-model="tips"
             width="500"
+            v-if="$router.currentRoute.name == 'Write Story' "
           >
             <template v-slot:activator="{ on, attrs }">
               <v-btn

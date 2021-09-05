@@ -100,10 +100,10 @@
 </template>
 
 <script>
-  import { validationMixin } from 'vuelidate'
-  import { required, maxLength, minLength } from 'vuelidate/lib/validators'
+import { validationMixin } from 'vuelidate'
+import { required, maxLength, minLength } from 'vuelidate/lib/validators'
 
-  export default {
+export default {
     mixins: [validationMixin],
 
     validations: {
@@ -150,36 +150,45 @@
     },
 
     methods: {
-      submit () {
-        this.$v.$touch()
-        if(this.$v.name.$dirty && this.$v.password.$dirty) {
-            var store = this.$store
-            var bodyFormData = new FormData();
-            bodyFormData.append("username", this.name);
-            bodyFormData.append("password", this.password);
-            this.axios.post("jwt/login", bodyFormData)
-            .then(function (response) {
-                console.log(response);
-                const token = response.headers['authorization'].replace("BEARER ", "");
-                // localStorage.setItem('token', token);
-                var options = {token: token, isLogin: true}
-                console.log(options)
-                store.commit("SET_AUTH", options)       
-                console.log(store.state.token)         
-            })
-            .catch(function (error) {
-                console.log(error);
-            })
-        }
-      },
-      clear () {
-        this.$v.$reset()
-        this.name = ''
-        this.password = ''
-        this.checkbox = false
-      },
+        changePath (goToPath) {
+            this.$router.push(goToPath).catch((error) => {
+                if (error.name != "NavigationDuplicated") {
+                    throw error;
+                }
+            });
+        },  
+        submit () {
+            this.$v.$touch()
+            if(this.$v.name.$dirty && this.$v.password.$dirty) {
+                let store = this.$store;
+                let bodyFormData = new FormData();
+                let self = this;
+                bodyFormData.append("username", this.name);
+                bodyFormData.append("password", this.password);
+                this.axios.post("jwt/login", bodyFormData)
+                .then(function (response) {
+                    // console.log(response);
+                    const token = response.headers['authorization'].replace("BEARER ", "");
+                    // localStorage.setItem('token', token);
+                    var options = {token: token, isLogin: true}
+                    // console.log(options)
+                    store.commit("SET_AUTH", options)       
+                    // console.log(store.state.token) 
+                    self.changePath('dashboard')
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+            }
+        },
+        clear () {
+            this.$v.$reset()
+            this.name = ''
+            this.password = ''
+            this.checkbox = false
+        },
     },
-  }
+}
 </script>
 
 <style lang='scss'>

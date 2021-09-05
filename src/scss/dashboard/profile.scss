@@ -1,6 +1,52 @@
-#background {
+#background-profile {
     height: auto;
     width: 100vw;
     min-height: 100vh;
     background-color: #F3F3F3;
+}
+
+#profile-card {
+    float: left;
+    margin-top: 8vh;
+    margin-left: 5%;
+    width: 90%;
+    max-width: 90%;
+}
+
+#profile-form {
+    float: left;
+    margin-top: 10vh;
+    margin-left: 5%;
+    width: 90%;
+}
+
+@mixin item ($maxWidth) {
+    #item{
+        max-width: $maxWidth;
+        height: auto;
+
+        #img {
+            max-width: $maxWidth;
+        }
+    }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    @include item(45vw)
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    @include item(30vw)
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    @include item(30vw)
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    @include item(25vw)
 }
